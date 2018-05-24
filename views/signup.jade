@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    title Signup
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .container
+      .row
+        .login-block
+          h1 Signup to Quizapp
+          form(action="/users/signup", method="post")
+            input#username(type='text',name="username" value='', placeholder='Enrollment')
+            input#email(type='text', name="email" value='', placeholder='Email')
+            input#password(type='password',name="password" value='', placeholder='Password')
+            input#password(type='password',name="password2" value='', placeholder='Confirm Password')
+            .dropdown
+              button.btn.btn-danger.dropdown-toggle#dropdown-toggle1(type="button", data-toggle="dropdown") Select Branch
+                span.caret
+              ul.dropdown-menu.dropdown-menu1
+                each branch, i in branches
+                  li(value="#{branch.branch}") #{branch.branch}
+            p
+              #{captcha}
+            input(type='text' name='captcha')      
+            input(type="hidden", name='branch', id="addquesans", value="")
+            center
+              button(type="submit") Signup
+  script(type='text/javascript').
+    $(document).ready(function(){
+      $('.dropdown-menu1 li').click(function(){
+        var x = $(this).text();
+        document.getElementById("dropdown-toggle1").innerHTML = x;
+        document.getElementById("addquesans").value = x;
+      });
+    });

@@ -1,0 +1,348 @@
+body
+{
+ background-image: url("../img/mn1.jpeg");
+}
+
+
+
+.login-block {
+    width: 400px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 20px;
+    border-top: 10px solid #ff0000;
+    margin: 140px auto;
+}
+
+.login-block h1 {
+    text-align: center;
+    color: #000;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.login-block input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-family: Montserrat;
+    padding: 0 20px 0 20px;
+    outline: none;
+}
+
+.login-block input#username {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#username:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#password {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#password:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#email {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#email:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#branch {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input#branch:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block input:active, .login-block input:focus {
+    border: 1px solid #ff656c;
+}
+
+.login-block button {
+    width: 30%;
+    height: 40px;
+    background: #ff0000;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-block button:hover {
+    background: #ff7b80;
+}
+
+.login-block a{
+   color: #ff7b88;
+ } 
+
+.login-block a:hover {
+   color: #ff0000;
+   
+}
+
+.navbar-brand
+{   margin:20px;
+    background: transparent;
+    font-size:300%;
+   font-weight: bold;
+   color:#f00;
+}
+
+
+.nav-link
+{
+   font-size: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 3px 3px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #787878;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+.login-block2 {
+    width: 1000px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 20px;
+    border-top: 10px solid #ff0000;
+    margin: 140px auto;
+}
+
+
+.login-block2 h1 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.login-block2 input {
+    width: 80%;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 28px;
+    margin-left:30px;
+    font-size: 18px;
+    font-family: Montserrat;
+    padding: 0 20px 0 20px;
+    outline: none;
+}
+
+.login-block2 input#que {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block2 input#que:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block2 input#opt {
+    background: #fff 15px top no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block2 input#opt:focus {
+    background: #fff 15px bottom no-repeat;
+    background-size: 16px 70px;
+}
+
+.login-block2 input:active, .login-block2 input:focus {
+    border: 1px solid #ff656c;
+}
+
+.login-block2 button {
+    width: 20%;
+    height: 40px;
+    margin-left:30px;
+    margin-top:30px;
+    background: #ff0000;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-block2 button:hover {
+    background: #ff7b80;
+}
+
+.dropdown-menu input {
+    width: 15%;
+ }
+
+.navbar-brand
+{
+   font-size: 200%; 
+   font-weight: bold;
+}
+
+.login-block1 {
+    width: 400px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 20px;
+    border-top: 10px solid #ff0000;
+    margin: 140px auto;
+}
+
+.login-block1 h1 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+}
+
+.login-block1 input {
+    width: 15%;
+    height: 17px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-family: Montserrat;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+
+
+.login-block1 a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    color: red;
+}
+
+.login-block1 a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.previous {
+    background-color: #ddd;
+    color: black;
+}
+
+.next {
+    background-color: #ddd;
+    color: white;
+}
+
+
+
+.navbar-brand
+{
+   font-size: 200%; 
+   font-weight: bold;
+}
+
+.nav-link
+{
+   font-size: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 3px 3px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #787878;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+#dropdown-toggle1 ,#dropdown-toggle2{
+    width:60%;
+}
+
+.dropdown-menu1{
+    width:25%;
+    cursor:pointer;
+    text-align:center;
+    font-size: 18px;
+    float: left;
+    margin-left:30px;
+}
+.dropdown-menu2{
+    width:25%;
+    cursor:pointer;
+    text-align:center;
+    font-size: 18px;
+}

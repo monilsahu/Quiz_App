@@ -1,0 +1,227 @@
+doctype html
+html(lang='en')
+  head
+    title Quiz
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main4.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .container
+      .row
+        .login-block1
+          .row
+            .col-md-3
+              .row.sideblock
+                .col-md-12
+                  center
+                    h2.timer#timer
+                .col-md-12
+                  p 
+                    b Questions attended:
+                  p 5
+                .col-md-12
+                  p
+                    b Total Questions:
+                  p 10
+            .col-md-9.quesblock
+                #que1.q1
+                    p#questionpara
+                    br
+                    form
+                    input#op1(type='radio', name='answer', value='op1')
+                    p#opp1
+                    br
+                    input#op2(type='radio', name='answer', value='op2')
+                    p#opp2
+                    br
+                    input#op3(type='radio', name='answer', value='op3')
+                    p#opp3
+                    br
+                    input#op4(type='radio', name='answer', value='op4')
+                    p#opp4
+                    br
+                    br
+                    center
+                        a#previous-button.previous « Previous
+                        |  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        a#next-button.next &nbsp&nbsp Next »
+                    br
+                    center
+                        button#subbtn(type='submit') Submit Quiz
+                .container#viewfinalscores
+                    .row
+                        h3 Your Quiz is Submitted
+                        h3#scoreheading  hfhioehf
+                        br
+                        center
+                            a.btn.btn-danger(href="/users/") Go To Home
+    script.
+      var i = 0 ;
+      var a;
+      var answer = [];
+      var retrievedData = localStorage.getItem("data");
+      var tdata = JSON.parse(retrievedData);
+      var data = tdata.ques;
+      var c = localStorage.getItem("duration");
+      //var c = retrievedData.quiz.duration * 60;
+      //var  c = parseInt(retrievedData.duration);
+      //var c = 15;
+      //c *= 60;
+      console.log(c);
+      var t;
+      function timedCount(){
+        var minutes = parseInt(c/60) % 60;
+        var seconds = c%60;
+
+        var result = (minutes + ":" + seconds)
+        $('#timer').html(result);
+        if(c==0){
+          onsubmitcallthis();
+        }
+        c = c-1;
+        localStorage.setItem("duration", c);
+        t = setTimeout(function()
+        {
+            timedCount()
+        },1000);
+      }
+
+      //var data = [{"_id":"5a0c0864c45d636bb604cf41","ques":"what is main source of income of a college?","op1":"fine","op2":"fees","op3":"moonstone","op4":"sponsers","ans":"3","cat":"DC","__v":0},{"_id":"5a0c16f3c45d636bb604cf42","ques":"fnoewnij","op1":"gnoei","op2":"gnoio","op3":"nog","op4":"go","ans":"3","cat":"DC","__v":0},{"_id":"5a0c1920c45d636bb604cf43","ques":"woifjew je fjewoi jfowi weio","op1":"hgih","op2":"gioh","op3":"go","op4":"goi","ans":"3","cat":"DC","__v":0},{"_id":"5a0c1932c45d636bb604cf44","ques":"efnwe qiihriwh ihwei hiweh fweiui","op1":"fieqh","op2":"fi","op3":"hihh","op4":"fihh","ans":"3","cat":"DC","__v":0},{"_id":"5a0c194dc45d636bb604cf45","ques":"whaf eh ah  aui wu w  hweoowuhiwe","op1":"fiueh","op2":"giuhiuhquing","op3":"fnn","op4":"nonoi","ans":"1","cat":"DC","__v":0}]
+      var x = document.getElementById("next-button");
+      x.addEventListener("click", myFunction);
+      function myFunction(){
+      if(i == data.length-1){
+
+      }else{
+        if(document.getElementById("op1").checked){
+        localStorage.setItem("a","1");
+        a=localStorage.getItem("a");
+        answer[i]= a;
+        }else if(document.getElementById("op2").checked){
+          localStorage.setItem("a","2");
+          a=localStorage.getItem("a");
+          answer[i]= a;
+          }else if(document.getElementById("op3").checked){
+      localStorage.setItem("a","3");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }else if(document.getElementById("op4").checked){
+      localStorage.setItem("a","4");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }
+      console.log(answer);
+      i++;
+      document.getElementById("op1").checked= false;
+      document.getElementById("op2").checked= false;
+      document.getElementById("op3").checked= false;
+      document.getElementById("op4").checked= false;
+      if(answer[i]=="1"){
+      document.getElementById("op1").checked= true;
+      }else if(answer[i]=="2"){
+      document.getElementById("op2").checked= true;
+      }else if(answer[i]=="3"){
+      document.getElementById("op3").checked= true;
+      }else if(answer[i]=="4"){
+      document.getElementById("op4").checked= true;
+      }
+      document.getElementById("questionpara").innerHTML = data[i].ques;
+      document.getElementById("opp1").innerHTML = data[i].op1;
+      document.getElementById("opp2").innerHTML = data[i].op2;
+      document.getElementById("opp3").innerHTML = data[i].op3;
+      document.getElementById("opp4").innerHTML = data[i].op4;
+      }
+      }
+      $(document).ready(function(){
+
+      timedCount();
+          document.getElementById("viewfinalscores").style.display = "none";
+      document.getElementById("questionpara").innerHTML = data[i].ques;
+      document.getElementById("opp1").innerHTML = data[i].op1;
+      document.getElementById("opp2").innerHTML = data[i].op2;
+      document.getElementById("opp3").innerHTML = data[i].op3;
+      document.getElementById("opp4").innerHTML = data[i].op4;
+      })
+      var y = document.getElementById("previous-button");
+      y.addEventListener("click", myFunction1);
+      function myFunction1() {
+      if(i==0){
+      }else{
+      if(document.getElementById("op1").checked){
+      localStorage.setItem("a","1");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }else if(document.getElementById("op2").checked){
+      localStorage.setItem("a","2");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }else if(document.getElementById("op3").checked){
+      localStorage.setItem("a","3");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }else if(document.getElementById("op4").checked){
+      localStorage.setItem("a","4");
+      a=localStorage.getItem("a");
+      answer[i]= a;
+      }
+      i--;
+      console.log(answer);
+      document.getElementById("op1").checked= false;
+      document.getElementById("op2").checked= false;
+      document.getElementById("op3").checked= false;
+      document.getElementById("op4").checked= false;
+      if(answer[i]=="1"){
+      document.getElementById("op1").checked= true;
+      }else if(answer[i]=="2"){
+      document.getElementById("op2").checked= true;
+      }else if(answer[i]=="3"){
+      document.getElementById("op3").checked= true;
+      }else if(answer[i]=="4"){
+      document.getElementById("op4").checked= true;
+      }
+      document.getElementById("questionpara").innerHTML = data[i].ques;
+      document.getElementById("opp1").innerHTML = data[i].op1;
+      document.getElementById("opp2").innerHTML = data[i].op2;
+      document.getElementById("opp3").innerHTML = data[i].op3;
+      document.getElementById("opp4").innerHTML = data[i].op4;
+      }
+      }
+      $('#subbtn').click(function(e){
+          onsubmitcallthis();
+      });
+      function onsubmitcallthis(){
+        //e.preventDefault();
+          var score = 0;
+          for(var i in data){
+            if(data[i].ans == answer[i]){
+            score++;
+            }
+        }
+        var quizid = localStorage.getItem("quizid");
+        var catid = localStorage.getItem("catid");
+        console.log(quizid.replace(/['"]+/g, ''));
+        console.log(catid.replace(/['"]+/g, ''));
+        console.log(score);
+        quizid = quizid.replace(/['"]+/g, '');
+        catid = catid.replace(/['"]+/g, '');
+        console.log(quizid);
+        console.log(catid);
+        localStorage.clear();
+        $.ajax({
+            url : '/users/endquiz',
+            type : "POST",
+            data : {score : score, subject : data[0].cat, quizid:quizid, catid:catid},
+            success: function(data){
+                console.log("success function called");
+                console.log(data);
+                document.getElementById("que1").style.display = "none";
+                document.getElementById("viewfinalscores").style.display = "block";
+                document.getElementById("scoreheading").innerHTML = "Your Score Is : " + data;
+            }
+        })
+      }

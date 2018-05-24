@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main2.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      .container
+        .row
+            if results
+                table.table.table-striped
+                    thead
+                        td S.No.
+                        td Username
+                        td quizname
+                        td scores
+                    tbody
+                        each res, i in results
+                            tr
+                                td #{i+1}
+                                td #{res.username}
+                                td #{res.scores[0].subject}
+                                td #{res.scores[0].score}
+
+            else if branches
+                h1#addquizheading  Select a Branch to view results
+                br
+                .dropdown
+                    .addquizmenu
+                        if branches
+                            each branch, i in branches
+                                br
+                                a.btn.btn-danger(href="/admin/viewscores/#{branch.branch}") #{branch.branch}
+                                br
+            else
+                h1#addquizheading  Select a Subject to view results
+                br
+                .dropdown
+                    .addquizmenu
+                        if subjects
+                            each quiz, i in subjects
+                                br
+                                a.btn.btn-danger(href="/admin/viewscores/#{branch}/#{quiz._id}") #{quiz.quizname}
+                                br

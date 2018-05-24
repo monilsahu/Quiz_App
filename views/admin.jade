@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    title AdminHome
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='css/bootstrap.css')
+    link(rel='stylesheet', href='css/main4.css')
+    script(src='js/jquery.js')
+    script(src='js/popper.js')
+    script(src='js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .container
+      .row
+        .login-block1
+          h1
+            b Admin Home
+          center
+            h5  Welcome!!
+          a.homead(href='/admin/addadmin') Add someone to admin group
+          br
+          a.homead(href='/admin/viewscores') View user's result
+          br
+          a.homead(href='/admin/addques') Add questions
+          br
+          a.homead(href='/admin/viewques') View question set
+          br
+          a.homead(href='/admin/addcat') Add Category
+          br
+          a.homead(href='/admin/addquiz') Add a Quiz 
+          br
+          a.homead(href='/admin/addbranch') Add a branch
+          br
+          a.homead(href='/admin/quesdocx') Download Quiz results

@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/main.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      h1  
+        b Add Questions
+      br
+      form(action='/admin/addques', method='post')
+        input#que(name='ques', type='text', placeholder='Enter question')
+        input#opt(name='op1', type='text', placeholder='Enter option 1)')
+        input#opt(name='op2', type='text', placeholder='Enter option 2)')
+        input#opt(type='text', name='op3', placeholder='Enter option 3)')
+        input#opt(type='text', name='op4', placeholder='Enter option 4)')
+        .row
+          .col-md-6
+            .dropdown
+              button.btn.btn-danger.dropdown-toggle#dropdown-toggle1(type="button", data-toggle="dropdown") Select Correct Answer
+                span.caret
+              ul.dropdown-menu.dropdown-menu1
+                li(value="1") 1
+                li(value="2") 2
+                li(value="3") 3
+                li(value="4") 4
+            input(type="hidden", name='ans', id="addquesans", value="")
+            br
+          .col-md-6
+            .dropdown
+              button.btn.btn-danger.dropdown-toggle#dropdown-toggle2(type="button", data-toggle="dropdown") Select Category
+                span.caret
+              ul.dropdown-menu.dropdown-menu2
+                if cats
+                  each cat, i in cats
+                    li(value="#{cat._id}") #{cat.cat}
+                      input(type='hidden', id='#{cat.cat}' ,value='#{cat._id}')
+            input(type="hidden" name="cat" id="addquescat" value="")
+        center
+          button(type='submit') Add

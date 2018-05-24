@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main2.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      h1 
+        b  Select Category
+      br
+      .dropdown
+        .addquizmenu
+            if cats
+              .row
+                each cat, i in cats  
+                  .col-md-3
+                    a.btn.btn-danger(href="/admin/viewques/#{cat._id}") #{cat.cat}

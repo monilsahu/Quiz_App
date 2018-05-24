@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main2.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      .container
+        .row
+            h1#addquizheading  Select a branch and subject combo to download that quiz results
+            br
+            if quizzes
+                each quiz, i in quizzes
+                    a.btn.btn-danger(href="/admin/quesdocx/#{quiz.quizname}/#{quiz._id}/#{quiz.branch}") #{quiz.quizname}
+                        p #{quiz.branch}
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    br

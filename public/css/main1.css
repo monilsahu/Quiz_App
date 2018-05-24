@@ -1,0 +1,329 @@
+/* body
+{
+ background-image: url("../img/mn1.jpeg");
+}
+
+
+
+.login-block1 {
+    width: 400px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 20px;
+    border-top: 10px solid #ff0000;
+    margin: 140px auto;
+}
+
+.login-block1 h1 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+}
+
+.login-block1 input {
+    width: 15%;
+    height: 17px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-family: Montserrat;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+
+
+.login-block1 a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    color: red;
+}
+
+.login-block1 a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.previous {
+    background-color: #ddd;
+    color: black;
+}
+
+.next {
+    background-color: #ddd;
+    color: white;
+}
+
+
+
+.navbar-brand
+{
+   font-size: 200%; 
+   font-weight: bold;
+}
+
+.nav-link
+{
+   font-size: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 3px 3px 3px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #787878;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+
+
+
+.login-block1 {
+    width: 400px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 20px;
+    border-top: 10px solid #ff0000;
+    margin: 140px auto;
+    display: inline;
+}
+
+.login-block1 h1 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Montserrat;
+}
+
+.login-block1 input {
+    width: 12%;
+    height: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-family: Montserrat;
+    padding: 0 10px 0 10px;
+    outline: none;
+    
+}
+
+.login-block1 p{
+    display: inline;
+    font-size: 20px;
+
+}
+.login-block1 a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    color: red;
+}
+
+.login-block1 a:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.login-block1 button {
+    width: 20%;
+    height: 40px;
+    background: #ff0000;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #e15960;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: Montserrat;
+    outline: none;
+    cursor: pointer;
+}
+
+.login-block1 button:hover {
+    background: #ff7b80;
+}
+
+
+.previous {
+    background-color: #ddd;
+    color: black;
+}
+
+.next {
+    background-color: #ddd;
+    color: white;
+}
+
+
+.q1  {
+    display: block;
+}
+
+
+
+.q2  {
+    display: none;
+}
+
+
+
+
+.navbar-brand
+{
+   font-size: 200%; 
+   font-weight: bold;
+}
+
+.nav-link
+{
+   font-size: 100%;
+}
+ */
+
+ body
+ {
+  background-image: url("../img/mn1.jpeg");
+ }
+ 
+ 
+ .hiddenrow{
+     display:none;
+ }
+ .login-block1 {
+     width: 400px;
+     padding: 18px;
+     background: #fff;
+     border-radius: 20px;
+     border-top: 10px solid #ff0000;
+     margin: 140px auto;
+     display: inline;
+ }
+ 
+ .login-block1 h1 {
+     text-align: center;
+     color: #000;
+     font-size: 30px;
+     text-transform: uppercase;
+     margin-top: 0;
+     margin-bottom: 15px;
+     font-family: Montserrat;
+ }
+ 
+ .login-block1 input {
+     width: 12%;
+     height: 15px;
+     box-sizing: border-box;
+     border-radius: 5px;
+     border: 1px solid #ccc;
+     margin-bottom: 12px;
+     font-size: 18px;
+     font-family: Montserrat;
+     padding: 0 10px 0 10px;
+     outline: none;
+     
+ }
+ 
+ .login-block1 p{
+     display: inline;
+     font-size: 20px;
+ 
+ }
+ .login-block1 a {
+     text-decoration: none;
+     display: inline-block;
+     padding: 8px 12px;
+     color: red;
+ }
+ 
+ .login-block1 a:hover {
+     background-color: #f0f0f0;
+     color: black;
+ }
+ 
+ .login-block1 button {
+     width: 20%;
+     height: 40px;
+     background: #ff0000;
+     box-sizing: border-box;
+     border-radius: 7px;
+     border: 1px solid #e15960;
+     color: #fff;
+     font-weight: bold;
+     text-transform: uppercase;
+     font-size: 15px;
+     font-family: Montserrat;
+     outline: none;
+     cursor: pointer;
+ }
+ 
+ .login-block1 button:hover {
+     background: #ff7b80;
+ }
+ 
+ 
+ .previous {
+     background-color: #ddd;
+     color: black;
+ }
+ 
+ .next {
+     background-color: #ddd;
+     color: white;
+ }
+ 
+ 
+ .q1  {
+     display: block;
+ }
+ 
+ 
+ 
+ .q2  {
+     display: none;
+ }
+ 
+ 
+ 
+ 
+ .navbar-brand
+ {   margin:20px;
+     background: transparent;
+     font-size:300%;
+    font-weight: bold;
+    color:#f00;
+ }
+ 
+ 
+ .nav-link
+ {
+    font-size: 100%;
+ }
+ 

@@ -1,0 +1,80 @@
+doctype html
+html(lang='en')
+  head
+    title ViewQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/main.js')
+    link(rel='stylesheet', href='/css/main2.css')
+    style.
+        .dropdown-menu1 li{
+            cursor:pointer
+        }
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      .container
+        h1 #{topic}
+        .row
+          each que, i in ques
+            .col-md-8.offset-md-1
+                .dropdown#viewquesdropdown
+                button.dropbtn
+                    | Q#{i+1}) &nbsp; #{que.ques}
+                .dropdown-content
+                    p #{que.op1}
+                    br
+                    p #{que.op2}
+                    br
+                    p #{que.op3}
+                    br
+                    p #{que.op4}
+                    br
+                    p ans is option :  #{que.ans}
+            .col-md-2
+                a(href="#" ,class="btn btn-danger removeQues" data-id="#{que._id}" ) Delete
+        br
+        form.addquizform(action='/admin/addquiz',method="post")
+            .row
+                input(type='hidden', name='quizname', value="#{topic}")
+                .col-md-4
+                    .dropdown
+                        button.btn.btn-danger.dropdown-toggle#dropdown-toggle1(type="button", data-toggle="dropdown") Duration(in minutes)
+                            span.caret
+                        ul.dropdown-menu.dropdown-menu1
+                            li(value="1") 10
+                            li(value="2") 15
+                            li(value="3") 30
+                            li(value="4") 60
+                        input(type="hidden", name='duration', id="addquesans", value="")
+                .col-md-4.offset-md-2
+                    .dropdown
+                        button.btn.btn-danger.dropdown-toggle#dropdown-toggle2(type="button", data-toggle="dropdown") Select Branch
+                            span.caret
+                        ul.dropdown-menu.dropdown-menu2
+                            each branch, i in branches
+                                li(value="#{branch.branch}") #{branch.branch}
+                        input(type="hidden", name='branch', id="addquescat", value="")
+                        br
+                    input(type="hidden", name='catid' value="#{catid}")
+            br
+            center
+              button.btn.btn-danger(type='submit') Add
+  script(type='text/javascript').
+    $(document).ready(function(){
+        $('.removeQues').click(function(e){
+            deleteId=$(this).data('id');
+            $.ajax({
+                url:'/admin/delete/'+deleteId,
+                type:'DELETE',
+                success:function(data){
+                        console.log(data);
+                }
+            });
+            window.location = '/admin/addquiz/#{topic}'
+        });
+    });

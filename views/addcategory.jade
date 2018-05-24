@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main2.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    nav.nav.navbar-nav.navbar-inverse
+      h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      h1
+        b Add Category
+      .row#catform
+        form(action='/admin/addcat', method='post')
+          .form-group
+            .row
+              .col-md-9.offset-md-1
+                input#que.form-control(name='cat', type='text', value='', placeholder='Enter Category')
+              .col-md-2
+                button.btn.btn-danger(type='submit') Add
+      .login-block1
+        h1 
+          b Categories already present
+        br
+        each cat, i in cats
+          .row
+            .col-md-6.offset-md-1
+              h3 #{cat.cat}
+            .col-md-3
+              a.btn.btn-danger.removecat(data-id="#{cat._id}" href="") Delete
+          br
+  script(type='text/javascript').
+    $(document).ready(function(){
+        $('.removecat').click(function(e){
+            deleteId=$(this).data('id');
+            $.ajax({
+                url:'/admin/deletecat/'+deleteId,
+                type:'DELETE',
+                success:function(data){
+                        console.log(data);
+                }
+            });
+            window.location = '/admin/addcat'
+        });
+    });

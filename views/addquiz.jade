@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  head
+    title AddQuestions
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main2.css')
+    script(src='/js/jquery.js')
+    script(src='/js/popper.js')
+    script(src='/js/bootstrap.js')
+  body
+    h1.navbar-brand(href='/admin/') QUIZAPP
+    .login-block2
+      .container
+        .row
+          .col-md-12
+            h1  
+              b Add Quiz
+          .col-md-12
+            .dropdown
+              .addquizmenu
+                  if cats
+                      each cat, i in cats
+                        .col-sm-3.add-quiz-menu
+                          a.btn.btn-danger(href="/admin/addquiz/#{cat.cat}/#{cat._id}") #{cat.cat}
+                  else
+                    p There are no more categories present which can be added as a new quiz
+        .row
+        .login-block1
+          h1 
+            b Active Quizzes
+          br
+          .row
+            each quiz, i in quizzes
+              .col-md-4
+                center
+                  h3 #{quiz.quizname}
+                  a.btn.btn-danger.removeQuiz(data-id="#{quiz._id}" href="") Delete
+              br
+        p#quizdata
+  script(type='text/javascript').
+    $(document).ready(function(){
+        $('.removeQuiz').click(function(e){
+            deleteId=$(this).data('id');
+            $.ajax({
+                url:'/admin/deletequiz/'+deleteId,
+                type:'DELETE',
+                success:function(data){
+                        console.log(data);
+                }
+            });
+            window.location = '/admin/addquiz'
+        });
+    });
